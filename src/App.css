@@ -1,38 +1,282 @@
-.App {
+/* import styling sheet for image gallery carousel */
+@import '~react-image-gallery/styles/css/image-gallery.css';
+
+/* Default page styling */
+.Website {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #000000;
+  background-color: #99CCFF;
+}
+/* add margin and top spacing to ensure nav bar doesnt cover title when navigating*/
+.about, .theTeam, .timetable, .gallery, .contactUs {padding: 30px 50px;}
+/* default heading colour*/
+h1, h2, h3 {color: #14522e;}
+
+/* For when screen width too small for full nav bar 
+TO BE ADDED
+@media screen and (max-width:850px) {   }*/
+
+
+/* Header Styling, centre title on img*/
+.home {
   text-align: center;
+  z-index: 90;
+  width: 100%;
+}
+.home h1 {
+  background-color: #99CCFF80;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 95;
+}
+.titleImg {width: 100%;}
+
+/* Nav bar styling*/
+/* Nav links styling*/
+.navMenu a:link {
+  color: #0000FF;
+  background-color: #FFFF00; 
+}
+.navMenu a:hover, .navMenu a:active {background-color: #caca00;}
+.navMenu a:active {text-decoration-line: underline;}
+/* Nav bar fixed at top of screen, full width*/
+.nav {
+  position: fixed;
+  width: 100%; 
+  display: inline-flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #808080;
+  z-index: 100;
+}
+/* Remove bullet points, remove any white space*/
+.navMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+}
+/* ensure they are next to each other and no white space*/
+.navMenu li{
+  float: left;     
+  margin-top: 0;   
+  font-size: 20px;    
+  overflow: hidden;
+}
+/* Centre each item in a block with appropriate padding*/
+.navMenu li a {
+  display: block;  
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* about section styling*/
+.about {
+  background-color: #6fbeff;
+}
+/* about section alignment*/
+.about p, .aboutImg {
+  width: 48%;
+  padding-right: 2%;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* team section styling*/
+/* add gap between imgs and set size*/
+.theTeam img {
+  float: left;
+  height: 200px;
+  width: 15%;
+  margin: 10px 2.5%;  
+  object-fit: cover;
+  text-align: center;
+  list-style-type: none;
+}
+.imgPreviewRow {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.imgPreview{
+  opacity: 0.9;
+  list-style-type: none;
+  padding: 0;
+}
+.imgPreview:hover {
+  cursor: pointer;
+  opacity: 1
+}
+/* so names line up under their corresponding photos*/
+.teamNames {
+  width: 16%;
+  margin: 10px 4% 0 0;
+  float: left;
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+.teamNamesRow {
+  list-style-type: none;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+/* ensures placement is not offset on smaller width*/
+.teamInfoRow {
+  display: block;
+  width: 100%;
+  padding-top: 150px;
+}
+/* Centres all text, both names and athlete descriptions*/
+.theTeam p {text-align: center;}
+
+/* timetable section styling*/
+.timetable {
+  background-color: #6fbeff;
+}
+.timetable table, td, th {
+  border: 1px solid;
+}
+.timetable table {
+  background-color: #808080;
+  width:  100%;
+  border-collapse: collapse;
+  box-shadow: 2px 2px 6px 2px #808080;
+}
+.timetable td {
+  background-color: #99CCFF;
+}
+.timetable th {
+  background-color: #50b0ff;
+}
+/* Make beginner trial buttons blend in*/
+.beginnerTrial {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #99CCFF;
+}
+.beginnerTrial2 {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: #6fbeff;
+}
+.beginnerTrial2:hover, .beginnerTrial:hover{
+  text-decoration-line: underline;
+  color: blue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* gallery section styling*/
+/* visually style carousel*/
+.galleryCarousel{
+  padding-top: 20px;
+  margin-top: 5rem;;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid rgb(146, 129, 242);
+  box-shadow: #2b15453d 1px 10px 10px 5px;
 }
+video {width: 100%;}
 
-.App-link {
-  color: #61dafb;
+/* contactUs section styling*/
+.contactUs {background-color: #6fbeff;}
+.contactUs a {color: #000000;}
+.contactUsInfo {
+  width: 50%;
+  float: left;
+  display: block;
+  margin-bottom: 50px;
 }
+.contactUs iframe {
+  width: 49%;
+  height: 500px;
+  display: inline-block;
+  border-color: #000000;
+}
+/* Create extra space between columns, using table to indent, hide table*/
+.contactUs td{border: none;}
+.openHours {
+  padding-right: 20px;
+}
+/* contactUs image styling*/
+.contactUsImg {
+  margin-top: 50px;
+  width: 50%;
+  display: inline-block;
+  box-shadow: 4px 4px 6px 4px #808080;
+}
+/* contactUs form styling */
+.contactForm {
+  margin-top: 50px;
+  margin-left: 10%;
+  border-style: solid;
+  display: inline-block;
+  background-color: #50b0ff;
+  width: 30%;
+}
+.formTitle{
+  text-decoration: underline;
+  font-weight: bold;
+}
+.contactForm textarea{
+  width: 90%;
+  height: 100px;
+}
+.contactForm p {font-size: 10px;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Footer styling */
+.footer {
+  width: 100%;
+  background-color: #808080;
+}
+.footer p {margin-left: 50px;}
+/* Align icons horizontally, with gaps between */
+.footerContactInfo {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin-left: 25%;
+  display:flex; 
+}
+.footerContactInfo a {
+  float: left;     
+  text-align: center;
+  padding: 14px 14px;
+  font-size: 17px;    
+  overflow: hidden; 
+}
+/* button placement and blend in */
+.footer button {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 33%;
+  background-color: #808080;
+}
+/* show selection on hover */
+.footer button:hover, .footerContactInfo a:hover{
+  text-decoration-line: underline;
+  background-color: #6e6e6e;
 }
